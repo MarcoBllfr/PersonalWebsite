@@ -1,25 +1,58 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Navigation from './components/Navigation/Navigation'
+import Card from './components/Card/Card';
+import Project from './components/Project/Project';
+import Fplace from './components/Placeholders/Fplace';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+class App extends Component{
+
+  constructor(){
+    super();
+    this.state={
+      slide: 0 ,
+      img : Fplace(),
+    }
+  }
+
+
+
+  onButtonNext=()=>{ 
+    let slides = this.state.slide;
+    const img = this.state.img;
+    if((slides+1)>= img.length){
+      slides=0;
+    } else {
+      slides++;
+    }
+    return this.setState({slide:slides})
+}
+onButtonPrev=()=>{ 
+  let slides = this.state.slide;
+    const img = this.state.img;
+    if(slides < img.length-1){
+      slides=1;
+    } else {
+      slides--;
+    }
+    return this.setState({slide:slides})
+}
+
+
+
+
+
+  render(){
+    return (
+      <div>
+      <Navigation/>
+      <Card />
+      <Project img={this.state.img} slide={this.state.slide} onButtonNext={this.onButtonNext} onButtonPrev={this.onButtonPrev} /> 
+    
     </div>
-  );
+    );
+  }
 }
 
 export default App;
