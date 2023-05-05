@@ -36,14 +36,5 @@
     transform: rotate(360deg);
   }
 }
-.container {
-  background: rgb(20, 20, 20);
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
 
-nav {
-  background: cyan;
-}
+

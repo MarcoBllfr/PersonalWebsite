@@ -3,6 +3,7 @@ import proimg from './propicimg.jpg'
 
 const Card = () => {
     return (
+    
         <div className="p-8 m-8 flex justify-center" >
                 <div className="border-double border-8 border-sky-500 flex flex-col items-center max-w-4xl  rounded-lg shadow md:flex-row md:max-w-l lg:h-auto hover:border-blue-700 hover:bg-gray-100  dark:bg-gray-800 dark:hover:bg-gray-700">
                     <img className="md:w-80 sm:w-auto min-sm:w-48 lg:w-96 border-black rounded-lg " src={proimg} alt="propic"></img>

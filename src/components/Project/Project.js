@@ -1,20 +1,19 @@
 import React from "react";
-import './project.css'
+
 
 const Project = ({img, slide, onButtonNext, onButtonPrev}) => {
 
     return (
         <div className="justify-center grid grid-flow-row auto-rows-max py-10 px-3  bg-cover bg-slate-800 ">
             <div className="flex justify-center p-2">
+    
             <p className="font-mono font-extrabold text-2xl text-gray-400 p-2">My Personal Project</p>
             </div>
             <div>
             <figure className="p-1 transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-                    
-                        <img className="rounded-lg" src={img[slide]} alt="placeholder" /> 
-                    
-                    <figcaption className="absolute px-4 text-lg text-white bottom-6">
-                        <p>future description for the project</p>
+                     <a href={img[slide].ref}><img className="rounded-lg" src={img[slide].immagine} alt="placeholder"/> </a>
+                    <figcaption className="absolute px-4 text-lg text-white bottom-6 ">
+                        <p>{img[slide].testo}</p>
                     </figcaption>
             </figure>
                 <div className="flex flex-wrap items-center justify-between bg-cover bg-slate-800 ">   

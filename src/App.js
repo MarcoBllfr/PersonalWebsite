@@ -3,7 +3,7 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation'
 import Card from './components/Card/Card';
 import Project from './components/Project/Project';
-import Fplace from './components/Placeholders/Fplace';
+import {Fplace} from './components/Placeholders/Fplace';
 
 
 class App extends Component{
@@ -12,7 +12,7 @@ class App extends Component{
     super();
     this.state={
       slide: 0 ,
-      img : Fplace(),
+      img : Fplace,
     }
   }
 
@@ -21,7 +21,7 @@ class App extends Component{
   onButtonNext=()=>{ 
     let slides = this.state.slide;
     const img = this.state.img;
-    if((slides+1)>= img.length){
+    if(slides+1 >= img.length){
       slides=0;
     } else {
       slides++;
@@ -31,8 +31,8 @@ class App extends Component{
 onButtonPrev=()=>{ 
   let slides = this.state.slide;
     const img = this.state.img;
-    if(slides < img.length-1){
-      slides=1;
+    if(slides === 0 ){
+      slides=img.length-1;
     } else {
       slides--;
     }
