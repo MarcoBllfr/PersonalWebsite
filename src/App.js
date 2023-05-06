@@ -29,7 +29,7 @@ class App extends Component{
     return this.setState({slide:slides})
 }
 onButtonPrev=()=>{ 
-  let slides = this.state.slide;
+    let slides = this.state.slide;
     const img = this.state.img;
     if(slides === 0 ){
       slides=img.length-1;
