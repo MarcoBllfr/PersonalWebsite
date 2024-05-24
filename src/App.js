@@ -36,6 +36,7 @@ onButtonPrev=()=>{
     } else {
       slides--;
     }
+    console.log(slides)
     return this.setState({slide:slides})
 }
 
